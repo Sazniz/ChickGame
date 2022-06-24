@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.chick {
+  height: 110px;
+  position: absolute;
+  bottom: 60px ;
+  left: 100px;
+  z-index: 100;
+  border: 2px solid red;
+}
+.foreground {
+  background: url("/assets/foreground.jpg") repeat-x;
+  height: 70px;
+  width: 4000px;
+  position: absolute;
+  bottom: 0;
+  animation: slide 4s linear infinite;
+}
+
+.background {
+  background: url(assets/background.png) repeat-x;
+  height: 100vh;
+  width: 4000px;
+  animation: slide 70s linear infinite;
+}
+
+.monster {
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+  background-image: linear-gradient(to right,#91f789 20%, #1b711a );
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: solid 5px black;
+  z-index: 100;
+}
+
+.gameOver {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter:drop-shadow(2px 2px 2px red);
+
+}
+
+.hidden {
+  display: none;
+}
+
+.shadow {
+  opacity: 0.5;
+}
+
+.tryAgain {
+  color: red;
+  background-color: black;
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 20px;
+  button-shadow: red;
+  -webkit-animation: pulsate 5s ease-out;
+  	-webkit-animation-iteration-count: infinite;
+  	opacity: 0.0
+
+}
+
+@keyframes slide {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-2000px); /* The image width */
+  }
+}
+@-webkit-keyframes pulsate {
+	0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+	90% {opacity: 1.0;}
+	100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
